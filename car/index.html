@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body style="background-color:white" background="./images/porsche.png">
+    <h1 style="text-align: center; color: white; font-family: cursive " >CAR WORLD</h1>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <form action="" class="border"></form>
+            <h3 style="color: rgb(15, 15, 106); text-align: center;">Enter Details</h3>
+            <center>
+               
+           
+            <input type="text" class="form-control" placeholder="Car Brand" id="carbrand"><br>
+           
+            <input type="text"  class="form-control" placeholder="Price" id="price"><br>
+           
+            <input type="text"  class="form-control" placeholder="Key" id="key"><br><br>
+            </center>
+            <center>
+            <button class="btn" onclick="store()" style="background-color: green; color: white;">Store Records</button>
+            </center>
+
+        </div>
+      
+</div>
+</form>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <form>
+    <h3 style="color: rgb(15, 15, 106); text-align: center;">Enter Key to Retrieve item</h3>
+  <center>
+    <input id="emp" type="text" placeholder="Key"><br></center>
+    <center>
+    <button class="btn" onclick="retrieve()" style="background-color: blue; color:white;">Retrieve Records</button>
+    </center>
+    </div>
+</div>
+</form>
+</div>
+
+<div class="container">
+    <div class="row">
+        <form>
+        <div class="column">
+<h3 style="color: rgb(15, 15, 106); text-align: center;">Enter Key to Delete item</h3>
+<center>
+<input type="text" placeholder="Key" ><br></center>
+<center>
+<button class="btn" onclick="dele()"  style="background-color: red; color:white;">Delete Records</button>
+<div id="result">
+
+</div>
+</center>
+</div>
+</div>
+</form>
+</div><br><br>
+<center><button class="butt" onclick="clear()"  style="background-color: yellow; color:rgb(9, 9, 9);">Clear All Records</button></center>
+
+<script>
+    function store(){
+
+    info={brand:carbrand.value,
+        price:price.value,
+        key:key.value
+    }
+    if(info.carbrand==""||info.price==""||info.key==""){
+        alert("Please fill all fields");
+    }
+    else{
+        localStorage.setItem(info.key,JSON.stringify(info))
+    alert("Details Added successfully")}};
+
+    function retrieve(){
+        let key=emp.value
+        let info=JSON.parse(localStorage.getItem(key))
+        result.innerHtml 
+    }
+    
+
+
+
+
+
+
+</script>
+</body>
+</html>
